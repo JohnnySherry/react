@@ -30,11 +30,13 @@ const columns = [{
 ];
 
 class TablePri extends React.Component {
-  state = {
-    data: [],
-    pagination: {},
-    loading: false,
-  };
+
+    state = {
+       data: [],
+       pagination: {},
+       loading: false,
+      };
+
 
   componentDidMount() {
     this.fetch();

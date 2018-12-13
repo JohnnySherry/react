@@ -3,20 +3,26 @@ import logo from './logo.svg';
 import './App.css';
 import { Table } from 'antd';
 import reqwest from 'reqwest';
-import TablePri from './TablePri.js'
+import Router from './Router';
+import TablePri from './TablePri.js';
+import Chart from './Chart.js'
 import {
   Layout, Menu, Breadcrumb, Icon,
 } from 'antd';
+import { HashRouter, Route, Switch} from 'react-router-dom';
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
 
 
 class App extends React.Component {
- 
+  constructor(props){
+    super(props);
+  }
 
   render() {
     return (
+      <div>
       <Layout>
     <Header className="header">
       <div className="logo" />
@@ -40,10 +46,17 @@ class App extends React.Component {
           style={{ height: '100%', borderRight: 0 }}
         >
           <SubMenu key="sub1" title={<span><Icon type="user" />subnav 1</span>}>
-            <Menu.Item key="1">option1</Menu.Item>
-            <Menu.Item key="2">option2</Menu.Item>
-            <Menu.Item key="3">option3</Menu.Item>
-            <Menu.Item key="4">option4</Menu.Item>
+            <Menu.Item key="1">
+              <a href="#/Table"></a>
+              <span>Table</span>
+            </Menu.Item>
+            <Menu.Item key="2">
+              <a href="#/Chart"></a>
+              <span>Chart</span>
+            </Menu.Item>            
+            <Menu.Item key="3">option2</Menu.Item>
+            <Menu.Item key="4">option3</Menu.Item>
+            <Menu.Item key="5">option4</Menu.Item>
           </SubMenu>
           <SubMenu key="sub2" title={<span><Icon type="laptop" />subnav 2</span>}>
             <Menu.Item key="5">option5</Menu.Item>
@@ -65,12 +78,11 @@ class App extends React.Component {
           <Breadcrumb.Item>List</Breadcrumb.Item>
           <Breadcrumb.Item>App</Breadcrumb.Item>
         </Breadcrumb>
-        <TablePri style={{
-          background: '#fff', padding: 24, margin: 0, minHeight: 280,
-        }}></TablePri>
+        <Router />
       </Layout>
     </Layout>
   </Layout>
+      </div>      
     );
   }
 }
