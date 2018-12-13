@@ -90,7 +90,7 @@ class TablePri extends React.Component {
         pagination={this.state.pagination}
         loading={this.state.loading}
         onChange={this.handleTableChange}
-        scroll={{ y: 240 }}
+        scroll={{ y: 640 }}
       ></Table>
     );
   }

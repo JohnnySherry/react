@@ -36,6 +36,7 @@ class App extends React.Component {
         <Menu.Item key="2">nav 2</Menu.Item>
         <Menu.Item key="3">nav 3</Menu.Item>
       </Menu>
+      <img src="" alt=""/>
     </Header>
     <Layout>
       <Sider width={200} style={{ background: '#fff' }}>
@@ -54,7 +55,10 @@ class App extends React.Component {
               <a href="#/Chart"></a>
               <span>Chart</span>
             </Menu.Item>            
-            <Menu.Item key="3">option2</Menu.Item>
+            <Menu.Item key="3">
+              <a href="#/Echart"></a>
+              <span>Echart</span>
+            </Menu.Item>
             <Menu.Item key="4">option3</Menu.Item>
             <Menu.Item key="5">option4</Menu.Item>
           </SubMenu>
